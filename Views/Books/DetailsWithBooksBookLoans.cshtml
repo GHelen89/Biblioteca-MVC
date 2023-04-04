@@ -1,0 +1,35 @@
+﻿@model Biblioteca_MVC.ViewModels.BooksBookLoansViewModel
+
+@{
+    ViewData["Title"] = "DetailsWithBooksBookLoans";
+}
+
+<h1>DetailsWithBooksBookLoans</h1>
+
+<div>
+    <h4>BooksBookLoansViewModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NumeCarte)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NumeCarte)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>
+<label asp-for="BookLoans" class="control-label">Book Loans for this book</label>
+@foreach (var item in Model.BookLoans)
+{
+        <div style=" border:1px solid red:">
+            <p>@Html.DisplayFor(modelItem =>item.DataRetur) </p>
+        @* <p>@Html.DisplayFor(modelItem =>item.ContentCode)</p>
+        <p>@Html.DisplayFor(modelItem =>item.Revision)</p>*@
+
+        </div>
+}
+<p>@Html.ActionLink("Back to List", "Index")</p>

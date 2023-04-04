@@ -1,0 +1,30 @@
+﻿@model Biblioteca_MVC.Models.MembersModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>MembersModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IDMembru)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IDMembru)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NumeMembru)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NumeMembru)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.IDMembru }) |
+    <a asp-action="Index">Back to List</a>
+</div>

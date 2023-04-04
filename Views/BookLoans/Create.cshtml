@@ -1,0 +1,55 @@
+﻿@model Biblioteca_MVC.Models.BookLoansModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>BookLoansModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DataImprumut" class="control-label"></label>
+                <input asp-for="DataImprumut" class="form-control" />
+                <span asp-validation-for="DataImprumut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataRetur" class="control-label"></label>
+                <input asp-for="DataRetur" class="form-control" />
+                <span asp-validation-for="DataRetur" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IDMembru" class="control-label"></label>
+              @*  <input asp-for="IDMembru" class="form-control" />
+                <span asp-validation-for="IDMembru" class="text-danger"></span>*@
+                @Html.DropDownList("IDMembru",new SelectList(ViewBag.Data,"IDMembru","NumeMembru"))
+            </div>
+            <div class="form-group">
+                <label asp-for="IDImprumut" class="control-label"></label>
+                <input asp-for="IDImprumut" class="form-control" />
+                <span asp-validation-for="IDImprumut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IDCarte" class="control-label"></label>
+                @*<input asp-for="IDCarte" class="form-control" />
+                <span asp-validation-for="IDCarte" class="text-danger"></span>*@
+                @Html.DropDownList("IDCarte",new SelectList(ViewBag.Data2,"IDCarte","NumeCarte"))
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

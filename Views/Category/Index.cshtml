@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Biblioteca_MVC.Models.CategoryModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IDCategorie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumeCategorie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descriere)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDCategorie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeCategorie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descriere)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.IDCategorie }) |
+                @Html.ActionLink("Details", "Details", new {  id=item.IDCategorie }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.IDCategorie })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

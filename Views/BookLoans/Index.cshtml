@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Biblioteca_MVC.Models.BookLoansModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DataImprumut)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataRetur)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IDMembru)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IDImprumut)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IDCarte)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataImprumut)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataRetur)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDMembru)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDImprumut)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDCarte)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {id=item.IDImprumut }) |
+                @Html.ActionLink("Details", "Details", new { id=item.IDImprumut }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.IDImprumut })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

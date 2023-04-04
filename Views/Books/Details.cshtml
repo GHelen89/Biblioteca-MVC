@@ -1,0 +1,72 @@
+﻿@model Biblioteca_MVC.Models.BooksModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>BooksModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IDCarte)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IDCarte)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NumeCarte)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NumeCarte)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Autor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Autor)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Editura)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Editura)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AnAparitie)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AnAparitie)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Imprumutata)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Imprumutata)
+        </dd>
+       @* <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DataImprumut)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataImprumut)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DataRetur)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataRetur)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IDMembru)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IDMembru)
+        </dd>*@
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDCarte}) |
+    <a asp-action="Index">Back to List</a>
+</div>
